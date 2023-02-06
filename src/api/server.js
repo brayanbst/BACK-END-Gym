@@ -12,7 +12,7 @@ dbConfig.initConnection();
 
 const options = {
 	host: process.env.HOST,
-	port: process.env.PORT,
+	port: process.env.PORT || 8080,
 	routes: {
 		cors: {
 			origin: ['*'],
