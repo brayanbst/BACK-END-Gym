@@ -14,7 +14,8 @@
     "pretint": "prettier-eslint --write \"src/**/*.js\"",
     "precommit": "lint-staged && npm test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "tape './src/api/server.test.js' 'src/**/*.test.js' './src/config/objection.down.js' | tap-spec"
+    "test": "tape './src/api/server.test.js' 'src/**/*.test.js' './src/config/objection.down.js' | tap-spec",
+    "start": "npm run dev"
   },
   "lint-staged": {
     "linters": {
@@ -28,17 +29,8 @@
       ]
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/apprunn/dp6ApiNotifications.git"
-  },
   "keywords": [],
-  "author": "Eduardo P. Rivero <jrperedo@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/apprunn/dp6ApiNotifications/issues"
-  },
-  "homepage": "https://github.com/apprunn/dp6ApiNotifications#readme",
   "dependencies": {
     "axios": "0.18.0",
     "bluebird": "3.5.1",
