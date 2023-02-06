@@ -1,7 +1,7 @@
 {
-  "name": "api-notifications",
+  "name": "app-pruebalatantwo",
   "version": "0.0.0-development",
-  "description": "the notifications api/service",
+  "description": "the app-pruebalatantwo api/service",
   "main": "index.js",
   "scripts": {
     "commit": "git cz",
@@ -15,7 +15,7 @@
     "precommit": "lint-staged && npm test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "tape './src/api/server.test.js' 'src/**/*.test.js' './src/config/objection.down.js' | tap-spec",
-    "start": "node server.js"
+    "start": "npm start src/index.js --name=app-pruebalatantwo -i max"
   },
   "lint-staged": {
     "linters": {
