@@ -33,7 +33,7 @@ const config = {
 	},
 	production: {
 		client: 'mysql',
-		debug: false,
+		debug: true,
 		connection: {
 			database: process.env.DB_NAME_PROD,
 			host: process.env.DB_HOST_PROD,
