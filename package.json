@@ -15,7 +15,7 @@
     "precommit": "lint-staged && npm test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "tape './src/api/server.test.js' 'src/**/*.test.js' './src/config/objection.down.js' | tap-spec",
-    "start": "npm run dev"
+    "start": "node server.js"
   },
   "lint-staged": {
     "linters": {
