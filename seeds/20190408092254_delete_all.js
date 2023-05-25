@@ -1,6 +1,6 @@
 'use strict';
 
 exports.seed = knex =>
-	knex('lic_ms_template')
+	knex('tb_client')
 		.del()
-		.then(() => knex('ms_contact').del());
+		.then(() => knex('tb_client').del());

@@ -1,11 +1,11 @@
 'use strict';
 
 const Joi = require('joi');
-const handler = require('./contact-update.handler');
+const handler = require('./client-update.handler');
 
 const route = {
 	handler,
-	method: 'PATCH',
+	method: 'PUT',
 	options: {
 		validate: {
 			params: {
@@ -17,17 +17,11 @@ const route = {
 			},
 			payload: {
 				name: Joi.string().allow('', null),
-				email: Joi.string().allow('', null),
-				typeContact: Joi.number()
-					.integer()
-					.description('1: PERSONA, 2: PROFESIONAL')
-					.example(1)
-					.default(1),
-				phone: Joi.string(),
+				age: Joi.number().integer(),
 			},
 		},
 	},
-	path: '/{id}',
+	path: '/services/clients/{id}',
 };
 
 module.exports = route;

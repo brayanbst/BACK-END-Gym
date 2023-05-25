@@ -1,7 +1,7 @@
 'use strict';
 
 const Boom = require('boom');
-const MsContact = require('../../models/msConcat');
+const MsContact = require('../../models/tbClient');
 
 async function handler(request, h) {
 	try {

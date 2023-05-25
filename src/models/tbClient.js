@@ -3,28 +3,25 @@
 const BaseModel = require('./base');
 const helper = require('./helper');
 
-class MsContact extends BaseModel {
+class TbClient extends BaseModel {
 	static get tableName() {
-		return 'ms_contact';
+		return 'tb_client';
 	}
 
 	static get jsonSchema() {
 		const defaultProperties = helper.defaultFields();
 		const schema = {
 			type: 'object',
-			required: ['name', 'typeContact'],
+			required: [],
 			properties: {
-				name: {
-					type: 'string',
-				},
-				email: {
-					type: ['string', 'null'],
-				},
-				typeContact: {
+				id: {
 					type: ['integer', 'null'],
 				},
-				phone: {
+				name: {
 					type: ['string', 'null'],
+				},
+				age: {
+					type: ['integer', 'null'],
 				},
 				...defaultProperties,
 			},
@@ -33,7 +30,7 @@ class MsContact extends BaseModel {
 	}
 
 	static defaultColumns(otherColumns = []) {
-		let columns = ['id', 'name', 'email', 'type_contact', 'phone'].map(c => `${this.tableName}.${c}`);
+		let columns = ['id', 'name', 'age'].map(c => `${this.tableName}.${c}`);
 
 		columns = columns.concat(otherColumns);
 
@@ -44,12 +41,11 @@ class MsContact extends BaseModel {
 		return this.query().insert(data);
 	}
 
-	static getAll(filter = {}, companyId) {
+	static getAll(filter = {}) {
 		let query = this.query()
 			.select(this.defaultColumns())
 			.skipUndefined()
-			.where('ms_contact.type_contact', filter.typeConcat)
-			.where('company_id', companyId);
+			.where('id', filter.id);
 		query = this.includePaginationAndSort(query, filter);
 		return query;
 	}
@@ -60,19 +56,17 @@ class MsContact extends BaseModel {
 			.where('id', id);
 	}
 
-	static remove(id, companyId) {
+	static remove(id) {
 		return this.query()
 			.softDelete()
-			.where('id', id)
-			.where('company_id', companyId);
+			.where('id', id);
 	}
 
-	static getById(id, companyId) {
+	static getById(id) {
 		return this.query()
 			.select(this.defaultColumns())
-			.findById(id)
-			.where('company_id', companyId);
+			.findById(id);
 	}
 }
 
-module.exports = MsContact;
+module.exports = TbClient;

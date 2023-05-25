@@ -1,6 +1,6 @@
 {
   "name": "api-notifications",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "the notifications api/service",
   "main": "index.js",
   "scripts": {

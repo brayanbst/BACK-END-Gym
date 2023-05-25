@@ -1,7 +1,7 @@
 'use strict';
 
 const Boom = require('boom');
-const Variable = require('../../models/msConcat');
+const Variable = require('../../models/tbClient');
 
 async function validCode(request, h) {
 	try {

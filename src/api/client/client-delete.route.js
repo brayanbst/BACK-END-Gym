@@ -2,10 +2,10 @@
 
 const { createRoute } = require('../shared/httpHelper');
 const Joi = require('joi');
-const handler = require('./contact-delete.handler');
+const handler = require('./client-delete.handler');
 
 const documentation = {
-	description: 'Crear un contacto',
+	description: 'Crear un client',
 	notes: [],
 };
 
@@ -21,7 +21,7 @@ const route = {
 			},
 		},
 	},
-	path: '/{id}',
+	path: '/services/clients/{id}',
 };
 
 module.exports = createRoute(route, documentation);

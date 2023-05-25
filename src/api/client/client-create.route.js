@@ -1,11 +1,11 @@
 'use strict';
 
 const Joi = require('joi');
-const handler = require('./contact-create.handler');
+const handler = require('./client-create.handler');
 const { createRoute } = require('../shared/httpHelper');
 
 const documentation = {
-	description: 'Crear un contacto',
+	description: 'Crear un client',
 	notes: [],
 };
 
@@ -16,18 +16,13 @@ const route = {
 		pre: [],
 		validate: {
 			payload: {
+				id: Joi.number().integer(),
 				name: Joi.string().allow('', null),
-				email: Joi.string().allow('', null),
-				typeContact: Joi.number()
-					.integer()
-					.description('1: PERSONA, 2: PROFESIONAL')
-					.example(1)
-					.default(1),
-				phone: Joi.string().allow('', null),
+				age: Joi.number().integer(),
 			},
 		},
 	},
-	path: '/',
+	path: '/services/clients',
 };
 
 module.exports = createRoute(route, documentation);

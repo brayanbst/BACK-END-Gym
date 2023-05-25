@@ -1,7 +1,7 @@
 'use strict';
 
 const pagiJapi = require('./shared/paginate');
-const templatePlugin = require('./contact/contact.plugin');
+const templatePlugin = require('./client/client.plugin');
 
 const plugins = [
 	{
@@ -10,7 +10,7 @@ const plugins = [
 	{
 		plugin: templatePlugin,
 		routes: {
-			prefix: '/contact',
+			prefix: '/reto',
 		},
 	},
 ];

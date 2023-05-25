@@ -1,7 +1,7 @@
 'use strict';
 
 const Joi = require('joi');
-const handler = require('./contact-details.handler');
+const handler = require('./client-details.handler');
 
 const route = {
 	handler,
@@ -15,7 +15,7 @@ const route = {
 			},
 		},
 	},
-	path: '/{id}',
+	path: '/services/clients/{id}',
 };
 
 module.exports = route;
